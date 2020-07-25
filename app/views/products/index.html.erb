@@ -1,13 +1,13 @@
 <h2>Shopping Cart</h2>
 
 <h3>Current Cart:</h3><br>
-<% cart.each do |item| %>
-    <li><%= item %></li>
+<% cart.each do |product| %>
+    <li><%= product %></li>
 <% end %>
 
-<%= form_for :product do |f| %>
+<%= form_tag '/' do %>
 
-    <%= f.text_field :name %>
+    <%= text_field_tag (:product) %>
 
-    <%= f.submit "Add to Cart" %>
+    <%= submit_tag "add to cart", action: :add %>
 <% end %>
